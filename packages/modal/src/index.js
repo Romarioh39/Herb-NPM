@@ -1,27 +1,67 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
-import { Container } from './styles'
+import { Container, Content, HeaderContainer, BodyContainer, FooterContainer, CloseContainer } from './styles'
+
 const { bool, func } = PropTypes
 
 class ModalEntry extends Component {
   static propTypes = {
     isOpen: bool.isRequired,
-    toggleModal: func.isRequired
+    toggleModal: func,
+  };
+ constructor(props){
+   super(props)
+    this.state = {
+      respectMouse: true,
+    };
+ }
+
+  toggleMouse = () => {
+    this.setState({ respectMouse: !this.state.respectMouse })
   }
 
-  render(){
-    const { isOpen, toggleModal } = this.props
+  toggleModal = () => {
+   if ( this.state.respectMouse ) {
+      this.props.toggleModal();
+   }
+    console.log('did not toggle');
+  };
 
-    if (!isOpen)
-     return null
+  render(){
+      const { isOpen } = this.props;
+      if (!isOpen) return null;
 
     return (
-      <Container onClick={toggleModal}>
-        {this.props.children}
+      <Container onClick={this.toggleModal}>
+        <Content onMouseEnter={this.toggleMouse} onMouseLeave={this.toggleMouse}>
+          {this.props.children}
+        </Content>      
       </Container>
-    )
+    );
   }
 }
 
-export default ModalEntry
+export class Header extends Component {
+  render() {
+    return <HeaderContainer>{this.props.children}</HeaderContainer>
+  }
+}
+export class Body extends Component {
+  render() {
+    return <BodyContainer>{this.props.children}</BodyContainer>
+  }
+}
+export class Footer extends Component {
+  render() {
+    return <FooterContainer>{this.props.children}</FooterContainer>
+  }
+}
+
+export class Close extends Component {
+  render() {
+    return <CloseContainer onClick = {this.props.toggleModal}>{this.props.children}</CloseContainer>
+  }
+}
+
+export default ModalEntry;

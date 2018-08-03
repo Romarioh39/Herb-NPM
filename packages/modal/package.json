@@ -12,12 +12,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/QuietOmen/sweet-ui.git"
+    "url": "git+https://github.com/Romarioh39/sweet-ui.git"
   },
   "author": "Bryce Hayden",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/QuietOmen/sweet-ui/issues"
+    "url": "https://github.com/Romarioh39/sweet-ui/issues"
   },
   "dependencies": {
     "emotion": "^9.2.6",
