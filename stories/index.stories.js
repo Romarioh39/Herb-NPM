@@ -2,7 +2,7 @@ import React from 'react';
 
 import { storiesOf } from '@storybook/react';
 
-import Modal, { Header, Body, Footer, Close } from '../packages/modal/src'
+import Modal, { Header, Body, Footer, Section, AllBtn } from '../packages/modal/src'
 
 
 class TestWrapper extends React.Component {
@@ -10,6 +10,10 @@ class TestWrapper extends React.Component {
     super(props)
     this.state = {
       showModal: false,
+      fullName: '',
+      email: '',
+      tel: '',
+      password: ''
      };
     }
 
@@ -21,6 +25,10 @@ class TestWrapper extends React.Component {
       console.log('Here I am');
     };
 
+    summitInfo = () => {
+      console.log("the state: ", this.state)
+    };
+
     render(){
       const { showModal } = this.state;
 
@@ -30,24 +38,27 @@ class TestWrapper extends React.Component {
             show me!
           </button>
           
-          <div>
+          <Body>
             <Modal isOpen={showModal} toggleModal={this.toggleModal}>
               <Header>
+                <p>
+                  Create an account here
+                </p>
                 <div>
-                  Games
+                <AllBtn toggleModal={this.toggleModal}>X</AllBtn>
                 </div>
-                <Close toggleModal={this.toggleModal}>X</Close>
-                </Header>
-              <Body>
-                <div>
-                  <button><img src={ require("./blackOps4.jpg") } alt="lol" /></button>
-                </div>
-              </Body>
+              </Header>
+              <Section>
+                <input type="text" placeholder="Full Name" value={this.state.fullName} onChange={(event) => { this.setState({ fullName: event.target.value }) }} />
+                <input type="email" placeholder="E-mail" value={this.state.email} onChange={(event) => { this.setState({ email: event.target.value }) }} />
+                <input type="tel" placeholder="Phone Number" value={this.state.tel} onChange={(event) => { this.setState ({ tel: event.target.value }) }} />
+                <input type="password" placeholder="Password" value={this.state.password} onChange={(event) => { this.setState({ password: event.target.value }) }} />
+              </Section>
               <Footer>
-                <Close toggleModal={this.toggleModal}>Buy Games</Close>
+                  <AllBtn toggleModal={this.toggleModal}>Done</AllBtn>
               </Footer>
             </Modal>
-          </div>
+          </Body>
         </div>
       )
     }
