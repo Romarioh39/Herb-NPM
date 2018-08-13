@@ -1,5 +1,5 @@
 {
-  "name": "herbs-ui",
+  "name": "herb-ui",
   "version": "1.0.0",
   "description": "Using storybook to demo",
   "main": "index.js",
@@ -15,7 +15,7 @@
     "url": "git+git@github.com:Romarioh39/Herb-NPM.git"
   },
   "keywords": [
-    "herbs-ui",
+    "herb-ui",
     "react"
   ],
   "author": "Romario Herbert",
