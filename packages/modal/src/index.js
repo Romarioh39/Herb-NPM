@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
-import { Container, Content, HeaderContainer, BodyContainer, FooterContainer, CloseContainer } from './styles'
+import { Container, Content, HeaderContainer, BodyContainer, FooterContainer, AllBtnContainer, SectionContainer } from './styles'
 
 const { bool, func } = PropTypes
 
@@ -41,15 +41,19 @@ class ModalEntry extends Component {
     );
   }
 }
-
+export class Body extends Component {
+  render() {
+    return <BodyContainer>{this.props.children}</BodyContainer>
+  }
+}
 export class Header extends Component {
   render() {
     return <HeaderContainer>{this.props.children}</HeaderContainer>
   }
 }
-export class Body extends Component {
+export class Section extends Component {
   render() {
-    return <BodyContainer>{this.props.children}</BodyContainer>
+    return <SectionContainer>{this.props.children}</SectionContainer>
   }
 }
 export class Footer extends Component {
@@ -57,11 +61,11 @@ export class Footer extends Component {
     return <FooterContainer>{this.props.children}</FooterContainer>
   }
 }
-
-export class Close extends Component {
+export class AllBtn extends Component {
   render() {
-    return <CloseContainer onClick = {this.props.toggleModal}>{this.props.children}</CloseContainer>
+    return <AllBtnContainer onClick = {this.props.toggleModal}>{this.props.children}</AllBtnContainer>
   }
 }
+
 
 export default ModalEntry;
