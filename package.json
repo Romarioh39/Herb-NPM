@@ -1,5 +1,5 @@
 {
-  "name": "sweet-ui",
+  "name": "herbs-ui",
   "version": "1.0.0",
   "description": "Using storybook to demo",
   "main": "index.js",
@@ -15,15 +15,15 @@
     "url": "git+git@github.com:Romarioh39/Herb-NPM.git"
   },
   "keywords": [
-    "sweet-ui",
+    "herbs-ui",
     "react"
   ],
   "author": "Romario Herbert",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Romarioh39/sweet-ui/issues"
+    "url": "https://github.com/Romarioh39/Herb-NPM/issues"
   },
-  "homepage": "https://github.com/Romarioh39/sweet-ui#readme",
+  "homepage": "https://github.com/Romarioh39/Herb-NPM#readme",
   "devDependencies": {
     "@storybook/addon-actions": "^3.4.8",
     "@storybook/addon-links": "^3.4.8",
