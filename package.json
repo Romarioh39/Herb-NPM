@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "Using storybook to demo",
   "main": "index.js",
-  "private": true,
   "scripts": {
     "bootstrap": "lerna bootstrap",
     "publish": "lerna publish",
