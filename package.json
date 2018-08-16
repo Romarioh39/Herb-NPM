@@ -1,6 +1,6 @@
 {
   "name": "herb-ui",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Using storybook to demo",
   "main": "index.js",
   "private": true,
