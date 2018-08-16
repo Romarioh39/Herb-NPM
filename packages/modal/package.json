@@ -4,11 +4,11 @@
   "description": "A modal built with react",
   "main": "index.js",
   "scripts": {
-    "build": "npm run build:clean && npm run build:compile",
-    "build:compile": "babel src --out-dir dist --ignore spec.js --copy-files",
-    "build:clean": "rm -rf dist",
-    "build:watch": "npm run build:compile -- --watch",
-    "prepublish": "npm run build"
+    "build:umd": "webpack ./src/index.js --config webpack.config.dev.js",
+    "build:umd:min": "webpack ./src/index.js --config webpack.config.prod.js",
+    "build:compile": "npm run clean && npm run build:umd && npm run build:umd:min",
+    "build": "npm run build:compile -- --watch",
+    "clean": "rimraf lib dist coverage && mkdir dist"
   },
   "repository": {
     "type": "git",
@@ -30,5 +30,14 @@
     "prop-types": "15.6.2",
     "react": "^16.4.1",
     "react-dom": "^16.4.1"
-  }
+  },
+  "npmName": "modal",
+  "npmFileMap": [
+    {
+      "basePath": "/dist/",
+      "files": [
+        "*.js"
+      ]
+    }
+  ]
 }

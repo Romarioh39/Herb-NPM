@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.Close = exports.Footer = exports.Body = exports.Header = undefined;
+exports.AllBtn = exports.Footer = exports.Section = exports.Header = exports.Body = undefined;
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -79,31 +79,8 @@ var ModalEntry = (_temp = _class = function (_Component) {
   toggleModal: func
 }, _temp);
 
-var Header = exports.Header = function (_Component2) {
-  _inherits(Header, _Component2);
-
-  function Header() {
-    _classCallCheck(this, Header);
-
-    return _possibleConstructorReturn(this, (Header.__proto__ || Object.getPrototypeOf(Header)).apply(this, arguments));
-  }
-
-  _createClass(Header, [{
-    key: 'render',
-    value: function render() {
-      return _react2.default.createElement(
-        _styles.HeaderContainer,
-        null,
-        this.props.children
-      );
-    }
-  }]);
-
-  return Header;
-}(_react.Component);
-
-var Body = exports.Body = function (_Component3) {
-  _inherits(Body, _Component3);
+var Body = exports.Body = function (_Component2) {
+  _inherits(Body, _Component2);
 
   function Body() {
     _classCallCheck(this, Body);
@@ -125,8 +102,54 @@ var Body = exports.Body = function (_Component3) {
   return Body;
 }(_react.Component);
 
-var Footer = exports.Footer = function (_Component4) {
-  _inherits(Footer, _Component4);
+var Header = exports.Header = function (_Component3) {
+  _inherits(Header, _Component3);
+
+  function Header() {
+    _classCallCheck(this, Header);
+
+    return _possibleConstructorReturn(this, (Header.__proto__ || Object.getPrototypeOf(Header)).apply(this, arguments));
+  }
+
+  _createClass(Header, [{
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement(
+        _styles.HeaderContainer,
+        null,
+        this.props.children
+      );
+    }
+  }]);
+
+  return Header;
+}(_react.Component);
+
+var Section = exports.Section = function (_Component4) {
+  _inherits(Section, _Component4);
+
+  function Section() {
+    _classCallCheck(this, Section);
+
+    return _possibleConstructorReturn(this, (Section.__proto__ || Object.getPrototypeOf(Section)).apply(this, arguments));
+  }
+
+  _createClass(Section, [{
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement(
+        _styles.SectionContainer,
+        null,
+        this.props.children
+      );
+    }
+  }]);
+
+  return Section;
+}(_react.Component);
+
+var Footer = exports.Footer = function (_Component5) {
+  _inherits(Footer, _Component5);
 
   function Footer() {
     _classCallCheck(this, Footer);
@@ -148,27 +171,27 @@ var Footer = exports.Footer = function (_Component4) {
   return Footer;
 }(_react.Component);
 
-var Close = exports.Close = function (_Component5) {
-  _inherits(Close, _Component5);
+var AllBtn = exports.AllBtn = function (_Component6) {
+  _inherits(AllBtn, _Component6);
 
-  function Close() {
-    _classCallCheck(this, Close);
+  function AllBtn() {
+    _classCallCheck(this, AllBtn);
 
-    return _possibleConstructorReturn(this, (Close.__proto__ || Object.getPrototypeOf(Close)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (AllBtn.__proto__ || Object.getPrototypeOf(AllBtn)).apply(this, arguments));
   }
 
-  _createClass(Close, [{
+  _createClass(AllBtn, [{
     key: 'render',
     value: function render() {
       return _react2.default.createElement(
-        _styles.CloseContainer,
+        _styles.AllBtnContainer,
         { onClick: this.props.toggleModal },
         this.props.children
       );
     }
   }]);
 
-  return Close;
+  return AllBtn;
 }(_react.Component);
 
 exports.default = ModalEntry;
