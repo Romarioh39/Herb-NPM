@@ -1,6 +1,6 @@
 {
   "name": "herb-ui",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "description": "A modal built with react",
   "main": "index.js",
   "scripts": {
