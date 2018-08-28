@@ -2,7 +2,7 @@ import React from 'react';
 
 import { storiesOf } from '@storybook/react';
 
-import Modal, { Header, Body, Footer, Section, AllBtn } from '../packages/modal/'
+import Modal, { Header, Body, Footer, Section, AllBtn } from '../packages/modal/index.js'
 
 
 class TestWrapper extends React.Component {
