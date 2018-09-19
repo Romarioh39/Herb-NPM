@@ -18,7 +18,7 @@ npm run storybook
 
  cd web
 
- npm i herb-ui -save --div 
+ npm i herb-ui -save --dev
 
  import Modal from "herb-ui"
  
