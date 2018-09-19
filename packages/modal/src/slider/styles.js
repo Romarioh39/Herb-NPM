@@ -10,10 +10,10 @@ export const BodyContainer= styled('div')`
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  background-color: white;
+  background-color: #262626;
   height: 40em;
   width: 40em;
-  padding: 100px 100px;
+  padding: 50px 50px;
 `;
 
 export const HeaderContainer = styled('div')`

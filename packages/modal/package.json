@@ -8,7 +8,10 @@
     "build:umd:min": "webpack ./src/index.js --config webpack.config.prod.js",
     "build:compile": "npm run clean && npm run build:umd && npm run build:umd:min",
     "build": "npm run build:compile -- --watch",
-    "clean": "rimraf lib dist coverage && mkdir dist"
+    "clean": "rimraf lib dist coverage && mkdir dist",
+    "preversion": "npm run clean && npm run check",
+    "postversion": "git push && git push --tags && npm run clean",
+    "prepublish": "npm run clean && npm run build"
   },
   "repository": {
     "type": "git",
@@ -25,7 +28,10 @@
   },
   "devDependencies": {
     "@babel/core": "^7.0.0-beta.54",
+    "@babel/plugin-syntax-dynamic-import": "^7.0.0",
+    "@babel/plugin-proposal-json-strings": "^7.0.0",
     "@babel/plugin-proposal-class-properties": "^7.0.0-beta.54",
+    "@babel/plugin-syntax-import-meta": "^7.0.0",
     "@babel/preset-env": "^7.0.0-beta.54",
     "@babel/preset-react": "^7.0.0-beta.54",
     "@babel/preset-stage-2": "^7.0.0-beta.54",
